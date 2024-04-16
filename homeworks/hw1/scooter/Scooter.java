@@ -1,5 +1,7 @@
 package homeworks.hw1.scooter;
 
+import java.util.Random;
+
 public class Scooter {
 
     // Unique identifier for the scooter.
@@ -63,6 +65,17 @@ public class Scooter {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    /**
+     * Moves the scooter to the specified location.
+     * @param x The x coordinate of the new location.
+     * @param y The y coordinate of the new location.
+     */
+    public void travelTo(double x, double y) {
+        this.x = x;
+        this.y = y;
+        this.batteryLevel -= new Random().nextInt(15); // Consume some battery.
     }
 
     @Override
